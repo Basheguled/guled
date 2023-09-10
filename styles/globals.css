@@ -11,6 +11,11 @@ body {
   color: #191414;
 }
 
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -24,6 +29,9 @@ footer {
 
 a {
   color: inherit;
+}
+
+li a {
   text-decoration: none;
 }
 

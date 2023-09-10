@@ -19,9 +19,9 @@ const NavItem = ({ href, name }) => {
   const { pathname } = useRouter();
   const isActive = pathname === href;
   return (
-    <div style={isActive ? { borderBottom: '2px solid black' } : {}}>
+    <li style={isActive ? { borderBottom: '2px solid black' } : {}}>
       <Link href={href}>{name}</Link>
-    </div>
+    </li>
   );
 };
 
@@ -30,7 +30,8 @@ const Logo = () => <Image src={logo} alt="logo" height={48} width={48} />;
 export const Navbar = () => (
   <nav className={wrapper}>
     <div className={container}>
-      <div style={{
+      <ul style={{
+        listStyle: 'none',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -39,7 +40,7 @@ export const Navbar = () => (
         {NAV_ITEMS.map((item) => (
           <NavItem key={item.name} {...item} />
         ))}
-      </div>
+      </ul>
       <Logo />
     </div>
   </nav>
