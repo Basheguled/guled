@@ -19,7 +19,7 @@ const NavItem = ({ href, name }) => {
   const { pathname } = useRouter();
   const isActive = pathname === href;
   return (
-    <li style={isActive ? { borderBottom: '2px solid black' } : {}}>
+    <li style={isActive ? { borderBottom: '2px solid black' } : { paddingBottom: '2px' }}>
       <Link href={href}>{name}</Link>
     </li>
   );

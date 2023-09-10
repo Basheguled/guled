@@ -19,7 +19,7 @@ const IntroContent = () => (
   </div>
 );
 
-const Avi = () => <Image src={avi} alt="logo" height={500} width={500} />;
+const Avi = () => <Image priority src={avi} alt="logo" height={500} width={500} />;
 
 const Intro = () => (
   <div style={{
