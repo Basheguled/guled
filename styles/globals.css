@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Roboto Slab, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto Slab, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -16,9 +16,12 @@ h1 {
   font-weight: 700;
 }
 
+p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   padding: 32px 0px;
   display: flex;
@@ -41,4 +44,8 @@ a:hover {
 
 * {
   box-sizing: border-box;
+}
+
+td:nth-child(odd) {
+  background-color: black;
 }

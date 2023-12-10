@@ -1,5 +1,5 @@
-import { AiOutlineLinkedin, AiOutlineGithub } from 'react-icons/ai';
-import { MdEmail } from 'react-icons/md';
+import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
+import { MdEmail } from "react-icons/md";
 
 export const Footer = () => (
   <footer>
