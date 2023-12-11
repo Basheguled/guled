@@ -1,4 +1,3 @@
-import { wrapper, container } from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -30,17 +29,9 @@ const NavItem = ({ href, name }) => {
 };
 
 export const Navbar = () => (
-  <nav className={wrapper}>
-    <div className={container}>
-      <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "48px",
-        }}
-      >
+  <nav className="w-full h-12 px-20 border border-solid border-black border-opacity-10 bg-white text-xs">
+    <div className=" w-full h-full m-auto flex flex-row justify-between items-center">
+      <ul className="list-none flex justify-center items-center gap-8">
         {NAV_ITEMS.map((item) => (
           <NavItem key={item.name} {...item} />
         ))}
