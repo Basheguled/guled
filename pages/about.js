@@ -13,7 +13,7 @@ const Education = () => (
       </p>
     </div>
     <a href="/guled_bashe_resume.pdf" download>
-      <div className="flex flex-row items-center justify-space py-2 px-4 border-2 border-solid border-black">
+      <div className="flex flex-row items-center justify-space py-2 px-4 border-2 border-solid border-[var(--primary)]">
         <p className="pr-2">Download Resume</p>
         <AiOutlineDownload size={24} />
       </div>
@@ -82,16 +82,16 @@ const Experience = () => (
 );
 
 const Content = () => (
-  <div className="flex flex-col justify-center items-center gap-8">
+  <div className="flex flex-col justify-center items-center gap-8 pb-8">
     <h1>about me 👨🏾‍💻</h1>
     <Education />
     <Experience />
   </div>
 );
 
-export default function About() {
+export default function About({ theme, toggleTheme }) {
   return (
-    <div className="w-full m-auto">
+    <div className="w-full m-auto text-[var(--primary)] bg-[var(--secondary)]">
       <Head>
         <title>Guled Bashe</title>
         <meta name="description" content="Personal Site" />
@@ -99,7 +99,7 @@ export default function About() {
       </Head>
 
       <div className="grid grid-rows-page gap-12">
-        <Navbar />
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <Content />
         <Footer />
       </div>

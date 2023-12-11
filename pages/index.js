@@ -28,9 +28,9 @@ const Intro = () => (
   </div>
 );
 
-export default function Home() {
+export default function Home({ theme, toggleTheme }) {
   return (
-    <div className="w-full m-auto">
+    <div className="w-full m-auto text-[var(--primary)] bg-[var(--secondary)]">
       <Head>
         <title>Guled Bashe</title>
         <meta name="description" content="Personal Site" />
@@ -38,7 +38,7 @@ export default function Home() {
       </Head>
 
       <div className="grid grid-rows-page gap-12">
-        <Navbar />
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <Intro />
         <Footer />
       </div>
