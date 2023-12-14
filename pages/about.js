@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
 const Education = () => (
-  <div className="flex flex-row items-start justify-between w-3/4">
+  <div className="flex flex-row items-start justify-between w-3/4 gap-4">
     <div className="max-w-xs">
       <h1 className="pb-4">what i studied&#58;</h1>
       <p>

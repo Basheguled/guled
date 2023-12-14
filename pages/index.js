@@ -6,7 +6,7 @@ import { Footer } from "../components/Footer";
 import avi from "../public/avi.svg";
 
 const IntroContent = () => (
-  <div className="w-1/2 flex flex-col gap-4">
+  <div className="lg:w-1/2 flex flex-col gap-4">
     <h1>Hi, I&apos;m Guled Bashe 👋🏾</h1>
     <p>
       I am a Frontend Software Engineer with 3+ years of professional experience
@@ -17,13 +17,17 @@ const IntroContent = () => (
   </div>
 );
 
-const Avi = () => <Image priority={true} src={avi} alt="logo" />;
+const Avi = () => (
+  <div className="lg:order-last">
+    <Image priority={true} src={avi} alt="logo" />
+  </div>
+);
 
 const Intro = () => (
-  <div className="w-full h-full pt-0 pb-20 px-20 flex flex-col justify-center">
-    <div className="flex flex-row justify-center items-center gap-20">
-      <IntroContent />
+  <div className="w-full h-full pt-0 pb-20 lg:px-20 px-8 flex flex-col justify-center">
+    <div className="flex lg:flex-row flex-col justify-center items-center lg:gap-20 gap-8">
       <Avi />
+      <IntroContent />
     </div>
   </div>
 );
