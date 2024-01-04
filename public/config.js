@@ -14,6 +14,20 @@ const CONFIG = {
       href: "/about",
     },
   },
+  projects: {
+    title: "Projects 🚀",
+    content: [
+      {
+        title: "Great Reads",
+        link: "https://books-basheguled.vercel.app/",
+        description: `This is a fun app I put together using Next.js and the
+        Google Books API, hosted on Vercel. It's primary application is finding
+         books for purchase on Google Books with a fun new UX ✨`,
+        github: "https://github.com/Basheguled/books",
+        skills: ["TypeScript", "Next.js", "TailwindCSS", "Vercel"],
+      },
+    ],
+  },
   about: {
     title: "About me",
     education: {

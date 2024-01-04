@@ -35,14 +35,14 @@ const Intro = () => (
 
 export default function Home({ theme, toggleTheme }) {
   return (
-    <div className="w-full m-auto text-[var(--primary)] bg-[var(--secondary)]">
+    <div className="h-screen w-full m-auto text-[var(--primary)] bg-[var(--secondary)]">
       <Head>
         <title>Guled Bashe</title>
         <meta name="description" content="Personal Site" />
         <link rel="icon" href="/guled-logo.png" />
       </Head>
 
-      <div className="grid grid-rows-page gap-12">
+      <div className="h-full grid grid-rows-page gap-12">
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <Intro />
         <Footer />
