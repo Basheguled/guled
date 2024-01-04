@@ -2,90 +2,117 @@ import Head from "next/head";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import CONFIG from "../public/config";
+import React from "react";
+import { Pill } from "../components/Pill";
+import Image from "next/image";
 
 const Education = () => (
-  <div className="flex flex-row items-start justify-between w-3/4 gap-4">
-    <div className="max-w-xs">
-      <h1 className="pb-4">what i studied&#58;</h1>
-      <p>
-        Computer Engineering at the University of Minnesota &mdash; Twin Cities,
-        College of Science &amp; Engineering
-      </p>
-    </div>
-    <a href="/guled_bashe_resume.pdf" download>
-      <div className="flex flex-row items-center justify-space py-2 px-4 border-2 border-solid border-[var(--primary)]">
-        <p className="pr-2">Download Resume</p>
-        <AiOutlineDownload size={24} />
+  <div className="w-3/4">
+    <h1 className="pb-2">{CONFIG.about.education.title}</h1>
+    <div className="flex flex-row justify-between gap-2">
+      <div>
+        <h3>{CONFIG.about.education.major}</h3>
+        <h3>{CONFIG.about.education.school}</h3>
       </div>
-    </a>
+      <h3>{CONFIG.about.education.graduation}</h3>
+    </div>
+  </div>
+);
+
+const Resume = () => (
+  <div className="w-3/4 flex sm:flex-row flex-col justify-between gap-2">
+    <h1 className="pb-4">{CONFIG.about.resume.title}</h1>
+    <div className="w-min">
+      <a href={CONFIG.about.resume.href} download>
+        <div className="flex flex-row items-center justify-space py-2 px-4 border-2 border-solid border-[var(--primary)] rounded">
+          <p className="pr-2">{CONFIG.about.resume.text}</p>
+          {CONFIG.about.resume.icon}
+        </div>
+      </a>
+    </div>
   </div>
 );
 
 const Experience = () => (
   <div className="w-3/4">
-    <h1 className="pb-4">where i&apos;ve worked&#58;</h1>
+    <h1 className="pb-4">{CONFIG.about.experience.title}</h1>
     <table>
       <tbody>
-        <tr>
-          <td />
-          <td className="pl-4">
-            <a
-              href="https://www.confluent.io/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Confluent, Remote
-            </a>
-            <ul className="list-[circle] pl-4">
-              <li>Senior Software Engineer | 02.2022 - Present</li>
-              <li>Software Engineer | 02.2021 - 02.2022</li>
-              <li>Software Engineering Intern | 05.2020 - 12.2020</li>
-            </ul>
-            <p>
-              Working at Confluent, I got to solve a wide array of problems. I
-              created new features in our onboarding flow to improve our attach
-              rate for new users. I also had the chance to independently improve
-              on critical areas like our app&apos;s authentication and payment
-              flows. Later on, my team specifically focused on increasing
-              customer conversion and user retention by shipping UI features and
-              then tracking user behaviors to decide what to ship next!
-            </p>
-          </td>
-        </tr>
-        <tr className="h-4" />
-        <tr>
-          <td />
-          <td className="pl-4">
-            <a
-              href="https://www.pagerduty.com/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              PagerDuty, San Francisco, CA
-            </a>
-            <ul className="list-[circle] pl-4">
-              <li>Software Engineering Intern | 05.2019 - 08.2019</li>
-            </ul>
-            <p>
-              The first half of my internship was mainly focused on analyzing
-              and transforming datasets using Python in Jupyter Notebook. The
-              second half (my favorite part 🤪) had me focused on frontend
-              development as the team was building new global search
-              functionality. That is when my love for frontend really started to
-              grow ❤️
-            </p>
-          </td>
-        </tr>
+        {CONFIG.about.experience.content.map((job, i) => {
+          return (
+            <React.Fragment key={job.title}>
+              <tr>
+                <td className="flex flex-col gap-2">
+                  <div className="flex sm:flex-row flex-col sm:items-center items-start justify-between gap-2">
+                    <div className="flex flex-row gap-2 sm:items-center">
+                      <h2>
+                        <a
+                          href={job.link}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          {job.title}
+                        </a>
+                      </h2>
+                      <Image
+                        priority={true}
+                        src={job.logo}
+                        width={24}
+                        height={24}
+                        alt="logo"
+                      />
+                    </div>
+                    <h3>{job.date}</h3>
+                  </div>
+                  <div className="w-fit">
+                    <Pill bg="bg-[var(--location-background)]">
+                      {job.location}
+                    </Pill>
+                  </div>
+
+                  <h3>
+                    {job.roles.map((role, i) => {
+                      return `${i !== 0 ? " " : ""}${role}${
+                        i !== job.roles.length - 1 ? " → " : ""
+                      }`;
+                    })}
+                  </h3>
+                  <p>{job.description}</p>
+                </td>
+              </tr>
+              {i !== CONFIG.about.experience.content.length - 1 && (
+                <tr className="h-8" />
+              )}
+            </React.Fragment>
+          );
+        })}
       </tbody>
     </table>
   </div>
 );
+const Skills = () => (
+  <div className="w-3/4">
+    <div className="w-full">
+      <h1 className="pb-2">{CONFIG.about.skills.title}</h1>
+      <div className="flex flex-row flex-wrap gap-2 pb-4">
+        {CONFIG.about.skills.content.map((skill, i) => {
+          return <Pill key={i}>{skill}</Pill>;
+        })}
+      </div>
+    </div>
+  </div>
+);
 
 const Content = () => (
-  <div className="flex flex-col justify-center items-center gap-8 pb-8">
-    <h1>about me 👨🏾‍💻</h1>
-    <Education />
-    <Experience />
+  <div className="w-full flex justify-center">
+    <div className="flex flex-col justify-center items-center gap-12 pb-16 max-w-5xl">
+      <h1>{CONFIG.about.title}</h1>
+      <Resume />
+      <Experience />
+      <Skills />
+      <Education />
+    </div>
   </div>
 );
 

@@ -4,28 +4,29 @@ import Image from "next/image";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import avi from "../public/avi.svg";
+import CONFIG from "../public/config";
 
-const IntroContent = () => (
-  <div className="lg:w-1/2 flex flex-col gap-4">
-    <h1>Hi, I&apos;m Guled Bashe 👋🏾</h1>
-    <p>
-      I am a Frontend Software Engineer with 3+ years of professional experience
-      building scalable UI features in React and JavaScript.
-    </p>
-    <p>My passion is crafting high-quality user experiences.</p>
-    <Link href="/about">Read more about me here!</Link>
-  </div>
-);
+const IntroContent = () => {
+  const { home } = CONFIG;
+
+  return (
+    <div className="lg:w-1/2 flex flex-col gap-4">
+      <h1>{home.title}</h1>
+      <p>{home.description}</p>
+      <Link href={home.link.href}>{home.link.text}</Link>
+    </div>
+  );
+};
 
 const Avi = () => (
   <div className="lg:order-last">
-    <Image priority={true} src={avi} alt="logo" />
+    <Image priority={true} src={CONFIG.home.image} alt="logo" />
   </div>
 );
 
 const Intro = () => (
-  <div className="w-full h-full pt-0 pb-20 lg:px-20 px-8 flex flex-col justify-center">
-    <div className="flex lg:flex-row flex-col justify-center items-center lg:gap-20 gap-8">
+  <div className="w-full h-full pt-0 pb-20 lg:px-20 px-8 flex flex-col justify-center items-center">
+    <div className="flex lg:flex-row flex-col justify-center items-center lg:gap-20 gap-8 w-full max-w-5xl">
       <Avi />
       <IntroContent />
     </div>

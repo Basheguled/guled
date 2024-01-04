@@ -43,7 +43,7 @@ const ToggleButton = ({ theme }) => {
 
 export const Navbar = ({ theme, toggleTheme }) => {
   return (
-    <nav className="text-[var(--primary)] bg-[var(--tertiary)] w-full h-12 px-20 border border-solid border-black border-opacity-10 text-xs">
+    <nav className="text-[var(--primary)] bg-[var(--tertiary)] w-full h-12 px-20 border border-solid border-black border-opacity-10 text-lg font-siz">
       <div className=" w-full h-full m-auto flex flex-row justify-between items-center">
         <ul className="list-none flex justify-center items-center gap-8">
           {NAV_ITEMS.map((item) => (

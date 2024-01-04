@@ -6,12 +6,16 @@
   --primary: #191414;
   --secondary: #fafafa;
   --tertiary: white;
+  --pill-background:rgb(209 213 219);
+  --location-background: rgb(254 215 170);
 }
 
 .dark {
   --primary: #fafafa;
-  --secondary: black;
+  --secondary: #121212;
   --tertiary: #191414;
+  --pill-background: rgb(107 114 128);
+  --location-background: rgb(251 146 60);
 }
 
 html,
@@ -31,21 +35,31 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   background-color: var(--secondary);
   color: var(--primary);
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 16px;
   font-weight: 700;
 }
 
 p {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 a {
@@ -65,6 +79,6 @@ a:hover {
   box-sizing: border-box;
 }
 
-td:nth-child(odd) {
-  background-color: black;
+hr {
+  background-color: var(--primary);
 }
