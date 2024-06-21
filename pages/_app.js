@@ -19,8 +19,10 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (window.localStorage.getItem("theme") === "dark") {
       setTheme("dark");
+      document.querySelector("html").classList.add("dark");
     } else {
       setTheme("");
+      document.querySelector("html").classList.remove("dark");
     }
   }, []);
 
