@@ -19,7 +19,7 @@ const CONFIG = {
     content: [
       {
         title: "Great Reads",
-        link: "https://books-basheguled.vercel.app/",
+        link: "https://books-azure-one.vercel.app",
         description: `This is a fun app I put together using Next.js and the
         Google Books API, hosted on Vercel. It's primary application is finding
          books for purchase on Google Books with a fun new UX ✨`,
